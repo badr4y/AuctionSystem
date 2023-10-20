@@ -6,7 +6,7 @@
 
 class Auction {
 private :
-	list<IBuyer> buyers;
+	std::list<IBuyer> buyers;
 public : 
 	void attach(IBuyer buyer);
 	void detach(IBuyer buyer);
