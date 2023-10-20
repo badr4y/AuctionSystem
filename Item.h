@@ -3,13 +3,11 @@
 
 class Item :public Auction {
 public:
-    // Constructeur
+    
     Item(float startPrice);
 
-    // Méthode pour mettre à jour le prix
     void updatePrice(float price);
 
-    // Méthode pour obtenir le prix actuel
     float getCurrentPrice() const;
 
 private:
