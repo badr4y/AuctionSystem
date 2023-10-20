@@ -1,7 +1,7 @@
 #ifndef AUCTION
 #define AUCTION
 
-#include "ibuyer.h"
+#include "IBuyer.h"
 #include <list>
 
 class Auction {
