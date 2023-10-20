@@ -1,6 +1,8 @@
 #ifndef ITEM_H
 #define ITEM_H
 
+#include "Auction.h"
+
 class Item :public Auction {
 public:
     // Constructeur
