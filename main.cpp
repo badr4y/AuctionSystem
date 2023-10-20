@@ -1,5 +1,5 @@
 #include <iostream>
-#include "item.h"
+#include "Item.h"
 
 int main() {
     Item item(12.0); // Objet "Item" créé avec un prix initial de 12€
