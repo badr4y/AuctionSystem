@@ -1,5 +1,4 @@
 #include "Item.h"
-#include "Auction.h"
 #include "Buyer.h"
 
 
@@ -16,17 +15,17 @@ float Item::getCurrentPrice() const {
     return currentPrice;
 }
 
-void Item::attach(Buyer buyer){
+void Item::attach(Buyer* buyer){
     buyers.push_back(buyer);
 }
 
-void Item::detach(Buyer buyer){
-    buyers.remove(buyer);
+void Item::detach(Buyer* buyer){
 }
 
 void Item::notify(){
     for (auto& buyer : buyers){
-	    buyer.updatePrice(this->currentPrice);
+	    buyer->updatePrice(this->currentPrice);
     }
 
 }
+Item::~Item() {}

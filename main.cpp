@@ -3,21 +3,21 @@
 #include "Buyer.h"
 
 int main() {
-    Item item1(12.0); // Objet "item1" created with an initial price of 12€
+    Item* item1 = new Item(12); // Objet "item1" created with an initial price of 12€
 
-    std::cout << "Prix actuel : " << item1.getCurrentPrice() << std::endl;
+    std::cout << "Prix actuel : " << item1->getCurrentPrice() << std::endl;
 
-    Buyer buyer1(20.0, item1);
-    Buyer buyer2(21.0, item1);
-    item1.attach(buyer1);
-    item1.attach(buyer2);
-    buyer1.newBid(15);
-    item1.notify();
-    buyer2.newBid(21);
-    item1.notify();
-    item1.detach(buyer1);
+    Buyer* buyer1 = new Buyer(20, item1);
+    Buyer* buyer2 = new Buyer(21, item1);
+    item1->attach(buyer1);
+    item1->attach(buyer2);
+    buyer1->newBid(15);
+    item1->notify();
+    buyer2->newBid(21);
+    item1->notify();
     
-    std::cout << "Nouveau prix : " << item1.getCurrentPrice() << std::endl;
+    std::cout << "Nouveau prix : " << item1->getCurrentPrice() << std::endl;
+    delete item1;
 
 }
 

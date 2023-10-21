@@ -3,7 +3,7 @@
 
 class IBuyer {
 public:
-	virtual void updatePrice(int newPrice);
+	virtual void updatePrice(float newPrice);
 	
 	};
 #endif
