@@ -21,12 +21,12 @@ void Item::attach(Buyer buyer){
 }
 
 void Item::detach(Buyer buyer){
-    buyers.remove(buyer)
+    buyers.remove(buyer);
 }
 
 void Item::notify(){
     for (auto& buyer : buyers){
-	buyer.updatePrice(this.currentPrice);
+	    buyer.updatePrice(this->currentPrice);
     }
 
 }

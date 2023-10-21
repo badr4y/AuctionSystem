@@ -6,6 +6,10 @@
 #include <list>
 
 class Item :public Auction {
+private:
+    float currentPrice;
+    std::list<IBuyer> buyers;
+    
 public:
     
     Item(float startPrice);
@@ -18,9 +22,6 @@ public:
     void detach(Buyer buyer);
     void notify();
 
-private:
-    float currentPrice;
-    std::list<IBuyer> buyers;
 };
 
 #endif // ITEM_H

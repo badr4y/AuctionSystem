@@ -9,14 +9,15 @@ class Buyer : public IBuyer {
 private:
 	float maxPossibleBid;
 	float currentPrice;
-	Item item;
+	Item& item;
 
 public:
 
-	Buyer(float maxPossibleBid);
+	Buyer(float maxPossibleBid, Item& item);
 	~Buyer();
 
-	void setItem(Item item);
+	void setCurrentPrice(float currentPrice);
+	void setItem(Item& item);
 	void updatePrice(float currentPrice);
 	void newBid(float newBid);
 
