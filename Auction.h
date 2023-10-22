@@ -11,9 +11,9 @@ class Auction {
 private :
 	std::list<Buyer*> buyers;
 public : 
-	virtual void attach(Buyer* buyer);
-	virtual void detach(Buyer* buyer);
-	virtual void notify();
+	virtual void attach(Buyer* buyer)=0;
+	virtual void detach(Buyer* buyer)=0;
+	virtual void notify()=0;
 }
 ;
 
