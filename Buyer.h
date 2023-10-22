@@ -14,13 +14,14 @@ private:
 	Item* item;
 
 public:
+	void updatePrice(float newPrice) override;
 
 	Buyer(float maxPossibleBid, Item* item);
 	~Buyer();
 
 	void setCurrentPrice(float currentPrice);
+
 	void setItem(Item* item);
-	void updatePrice(float newPrice) override;
 	void newBid(float newBid);
 
 };
