@@ -1,11 +1,12 @@
 #include "Item.h"
 #include "Buyer.h"
 #include <iostream>
+#include <ctime>
 
 
 // Constructor
-Item::Item(float startPrice) {
-    currentPrice = startPrice;
+Item::Item(float startPrice) : currentPrice(startPrice), buyers(), currentTime() {
+    time(&currentTime);
 }
 
 void Item::updatePrice(float price) {
@@ -18,6 +19,14 @@ float Item::getCurrentPrice() const {
 
 void Item::attach(Buyer* buyer){
     buyers.push_back(buyer);
+}
+
+void Item::setCurrentTime() {
+    time(&this->currentTime);
+}
+
+time_t Item::getCurrentTime() {
+    return currentTime;
 }
 
 void Item::detach(Buyer* buyer){

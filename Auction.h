@@ -8,8 +8,7 @@
 class Buyer;
 
 class Auction {
-private :
-	std::list<Buyer*> buyers;
+
 public : 
 	virtual void attach(Buyer* buyer)=0;
 	virtual void detach(Buyer* buyer)=0;
