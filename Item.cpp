@@ -1,5 +1,6 @@
 #include "Item.h"
 #include "Buyer.h"
+#include <iostream>
 
 
 // Constructor
@@ -20,6 +21,7 @@ void Item::attach(Buyer* buyer){
 }
 
 void Item::detach(Buyer* buyer){
+    buyers.remove(buyer);
 }
 
 void Item::notify(){

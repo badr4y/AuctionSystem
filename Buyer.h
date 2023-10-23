@@ -17,7 +17,7 @@ public:
 	void updatePrice(float newPrice) override;
 
 	Buyer(float maxPossibleBid, Item* item);
-	~Buyer();
+	virtual ~Buyer();
 
 	void setCurrentPrice(float currentPrice);
 

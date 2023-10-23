@@ -15,9 +15,12 @@ int main() {
     item1->notify();
     buyer2->newBid(21);
     item1->notify();
+    item1->detach(buyer1);
     
     std::cout << "Nouveau prix : " << item1->getCurrentPrice() << std::endl;
     delete item1;
+    delete buyer1;
+    delete buyer2;
 
 }
 
