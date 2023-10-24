@@ -22,6 +22,8 @@ public:
 
 	void setCurrentPrice(float currentPrice);
 
+	float getCurrentPrice();
+
 	void setItem(Item* item);
 	void newBid(float newBid, time_t bidTime);
 

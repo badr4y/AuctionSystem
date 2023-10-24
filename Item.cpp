@@ -34,9 +34,9 @@ void Item::detach(Buyer* buyer){
 }
 
 void Item::notify(){
-    for (auto& buyer : buyers){
+    for (Buyer* buyer : buyers){
 	    buyer->updatePrice(this->currentPrice);
     }
-
 }
+
 Item::~Item() {}

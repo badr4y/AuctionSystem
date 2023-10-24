@@ -15,6 +15,8 @@ int main() {
     item1->attach(buyer2);
     buyer1->newBid(15, time(nullptr));
     item1->notify();
+    buyer2->getCurrentPrice();
+    buyer2->newBid(14, time(nullptr));
 
     // Sleep for 3 seconds
     std::this_thread::sleep_for(std::chrono::seconds(3));

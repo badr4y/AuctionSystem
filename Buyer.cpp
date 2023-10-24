@@ -4,10 +4,14 @@
 #include <iostream>
 
 
-Buyer::Buyer(float maxPossibleBid, Item* item): maxPossibleBid(maxPossibleBid), item(item){
+Buyer::Buyer(float maxPossibleBid, Item* item): maxPossibleBid(maxPossibleBid), currentPrice(), item(item) {
 	this->maxPossibleBid = maxPossibleBid;
 	this->item = item;
 	currentPrice = item->getCurrentPrice();
+}
+
+float Buyer::getCurrentPrice() {
+	return this->currentPrice;
 }
 
 void Buyer::setItem(Item* item){
@@ -18,7 +22,7 @@ void Buyer::setCurrentPrice(float currentPrice) {
 }
 
 void Buyer::updatePrice(float newPrice) {
-	this->currentPrice = currentPrice;
+	this->currentPrice = newPrice;
 }
 
 void Buyer::newBid(float newBid, time_t bidTime)
