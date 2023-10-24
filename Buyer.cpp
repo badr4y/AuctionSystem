@@ -1,11 +1,17 @@
 #include "Buyer.h"
 #include "Item.h"
+#include <ctime>
+#include <iostream>
 
 
-Buyer::Buyer(float maxPossibleBid, Item* item): maxPossibleBid(maxPossibleBid), item(item){
+Buyer::Buyer(float maxPossibleBid, Item* item): maxPossibleBid(maxPossibleBid), currentPrice(), item(item) {
 	this->maxPossibleBid = maxPossibleBid;
 	this->item = item;
 	currentPrice = item->getCurrentPrice();
+}
+
+float Buyer::getCurrentPrice() {
+	return this->currentPrice;
 }
 
 void Buyer::setItem(Item* item){
@@ -16,11 +22,19 @@ void Buyer::setCurrentPrice(float currentPrice) {
 }
 
 void Buyer::updatePrice(float newPrice) {
-	this->currentPrice = currentPrice;
+	this->currentPrice = newPrice;
 }
 
-void Buyer::newBid(float newBid){
-	item->updatePrice(newBid);
+void Buyer::newBid(float newBid, time_t bidTime)
+{
+	if (bidTime - (this->item->getCurrentTime()) >= 2) {
+		std::cout << "time elapsed, the auction has ended" << std::endl;
+	}
+	else if (newBid <= this->currentPrice) {
+		std::cout << "bid not enough" << std::endl;
+	}
+	else {
+		item->updatePrice(newBid);
+	}
 }
-
-Buyer::~Buyer(){}
+Buyer::~Buyer() {};

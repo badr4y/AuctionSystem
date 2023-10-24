@@ -3,6 +3,7 @@
 
 #include "Item.h"
 #include "IBuyer.h"
+#include <ctime>
 
 class Item;
 
@@ -21,8 +22,11 @@ public:
 
 	void setCurrentPrice(float currentPrice);
 
+	float getCurrentPrice();
+
 	void setItem(Item* item);
-	void newBid(float newBid);
+	void newBid(float newBid, time_t bidTime);
+
 
 };
 
