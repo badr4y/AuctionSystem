@@ -28,12 +28,13 @@ void Buyer::updatePrice(float newPrice) {
 void Buyer::newBid(float newBid, time_t bidTime)
 {
 	if (bidTime - (this->item->getCurrentTime()) >= 2) {
-		std::cout << "time elapsed, the auction has ended" << std::endl;
+		std::cout << "Can't bid anymore : Time elapsed, the auction has ended." << std::endl;
 	}
 	else if (newBid <= this->currentPrice) {
-		std::cout << "bid not enough" << std::endl;
+		std::cout << "Can't bid : Bid smaller than current price of the item." << std::endl;
 	}
 	else {
+		std::cout << "Bid accepted." << std::endl;
 		item->updatePrice(newBid);
 	}
 }

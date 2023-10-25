@@ -11,6 +11,7 @@ Item::Item(float startPrice) : currentPrice(startPrice), buyers(), currentTime()
 
 void Item::updatePrice(float price) {
     currentPrice = price;
+    notify();
 }
 
 float Item::getCurrentPrice() const {
