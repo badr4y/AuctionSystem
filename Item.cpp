@@ -22,10 +22,6 @@ void Item::attach(Buyer* buyer){
     buyers.push_back(buyer);
 }
 
-void Item::setCurrentTime() {
-    time(&this->currentTime);
-}
-
 time_t Item::getCurrentTime() {
     return currentTime;
 }

@@ -21,10 +21,10 @@ int main() {
 
     // Sleep for 3 seconds
     std::this_thread::sleep_for(std::chrono::seconds(3));
-    std::cout << "Prix final : " << item1->getCurrentPrice() << std::endl;
+    std::cout << "execution sleeps for 3 seconds" << std::endl;
 
     buyer2->newBid(21, time(nullptr));
-    std::cout << "Prix actuel (4) : " << item1->getCurrentPrice() << std::endl;
+    std::cout << "Prix final : " << item1->getCurrentPrice() << std::endl;
 
     delete item1;
     delete buyer1;

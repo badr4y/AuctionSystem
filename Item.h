@@ -20,7 +20,6 @@ public:
     Item(float startPrice);
 
     void updatePrice(float price);
-    void setCurrentTime();
     float getCurrentPrice() const;
     time_t getCurrentTime();
 
