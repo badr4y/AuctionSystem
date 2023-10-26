@@ -31,7 +31,7 @@ On a implémenté un système d'actuariat et de vente aux enchères qui permet g
 ## Utilisation
 
 1. Cloner ce dépôt sur votre machine locale : 
-	git clone https://github.com/votre_utilisateur/systeme-actuariat-vente-enchere.git
+	git clone https://github.com/badr4y/AuctionSystem.git
 2. Compilation avec makefile : 
 	make
 3. Exécution du programme : 
